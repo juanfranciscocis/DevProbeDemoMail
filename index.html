@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Correo Electrónico</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script>
+    const emailData = {
+      1: {
+        subject: "Asunto del correo 1",
+        content: "Este es el contenido completo del correo 1.",
+      },
+      2: {
+        subject: "Asunto del correo 2",
+        content: "Este es el contenido completo del correo 2.",
+      },
+    };
+
+    function showEmail(id) {
+      const emailSubject = document.getElementById("email-subject");
+      const emailContent = document.getElementById("email-content");
+
+      emailSubject.textContent = emailData[id].subject;
+      emailContent.textContent = emailData[id].content;
+    }
+  </script>
+</head>
+<body>
+<div class="email-app">
+  <aside class="sidebar">
+    <h2>Correo</h2>
+    <ul>
+      <li class="active">Bandeja de entrada</li>
+      <li>Enviados</li>
+      <li>Borradores</li>
+      <li>Papelera</li>
+    </ul>
+  </aside>
+
+  <main class="main-content">
+    <div class="email-list">
+      <div class="email-item" onclick="showEmail(1)">
+        <h3>Asunto del correo 1</h3>
+        <p>Resumen del contenido del correo 1...</p>
+        <span>10:30 AM</span>
+      </div>
+      <div class="email-item" onclick="showEmail(2)">
+        <h3>Asunto del correo 2</h3>
+        <p>Resumen del contenido del correo 2...</p>
+        <span>Ayer</span>
+      </div>
+    </div>
+    <div class="email-view">
+      <h3 id="email-subject">Selecciona un correo</h3>
+      <p id="email-content">El contenido del correo aparecerá aquí.</p>
+    </div>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
